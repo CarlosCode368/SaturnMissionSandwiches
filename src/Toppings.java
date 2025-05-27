@@ -12,7 +12,7 @@ public class Toppings {
                 ***NATIONS AND COLONIES WORKING TOGETHER TO PROVIDE FOOD FOR ALL HUMANS IN THE GALAXY***
                 ***TRY OUR NEW MUSHROOM GUYS!!! DISCOVERED ON AN ABANDONED SPACE COLONY, BECOME A PIONEER OF TASTE!!!***
                 Choose your toppings:
-                Type 'done' when you're finished:
+                
                 1. Hydroponic Lettuce
                 2. Moon Farm Onions
                 3. Fake Tomatoes
@@ -21,6 +21,7 @@ public class Toppings {
                 6. Military Graded Pickles
                 7. G-U-A-C-A Mole
                 8. Mushroom Guys (WARNING: SLIGHT PROBABILITY OF BRAIN PARASITES IF CONSUMED)
+                C. Complete toppings
                 x. Cancel Order
                 (Toppings are FREE with your sandwich!)
                 """);
@@ -94,9 +95,10 @@ public class Toppings {
                                                     selectedToppings.add("Mushroom Guys");
                                                 }
                                             }
-                                            case "done" -> {
+                                            case "c" -> {
                                                 System.out.println("Toppings selection complete!");
                                                 isToppingsRunning = false;
+                                                new Sauce().open(scanner, breadMinerals);
                                             }
                                             case "x" -> {
                                                 System.out.println("Order cancelled. Returning to Main Terminal.");
@@ -106,8 +108,6 @@ public class Toppings {
                                         }
                                     }
 
-                                    // You can use selectedToppings later for summary/checkout
-                                    // Example:
                                     System.out.println("You selected the following toppings: " + selectedToppings);
                                 }
                             }
