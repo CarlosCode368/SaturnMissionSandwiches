@@ -69,8 +69,10 @@ public class Cheese {
                 } else {
                     System.out.println("You chose NO CHEESE.");
                 }
-                new Cheese().open(scanner, breadMinerals);
+                new Toppings().open(scanner, breadMinerals);
                 isCheeseRunning = false;
+            }else{
+                System.out.println("Invalid command.Please try again.");
             }
         }
     }

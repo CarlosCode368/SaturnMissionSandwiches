@@ -8,11 +8,11 @@ public class Bread {
         while (isBreadRunning) {
             System.out.println("""
                     Please choose the size of bread
-                           for your sandwich
-                               1. 4 inch--550 minerals
-                               2. 8 inch--700 minerals
-                               3. 12 inch--850 minerals
-                               x. Return to Main Terminal
+                    for your sandwich
+                            1. 4 inch--550 minerals
+                            2. 8 inch--700 minerals
+                            3. 12 inch--850 minerals
+                            x. Return to Main Terminal
                     """
             );
             System.out.print("> ");
