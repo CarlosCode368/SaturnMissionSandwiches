@@ -18,18 +18,26 @@ public class Bread {
             System.out.print("> ");
 
             String sizeChoice = scanner.nextLine().toLowerCase();
+            int breadMinerals =0;
+
             switch (sizeChoice) {
                 case "1":
+                    breadMinerals=550;
                     System.out.println("You chose 4 inch bread");
-                    chooseBreadType(scanner);  //user will be sent to the chooseBreadType boolean
+                    chooseBreadType(scanner,breadMinerals);  //user will be sent to the chooseBreadType boolean
+                    isBreadRunning = false;
                     break;
                 case "2":
+                    breadMinerals=700;
                     System.out.println("You chose 8 inch bread");
-                    chooseBreadType(scanner);
+                    chooseBreadType(scanner,breadMinerals);
+                    isBreadRunning = false;
                     break;
                 case "3":
+                    breadMinerals=850;
                     System.out.println("You chose 12 inch bread");
-                    chooseBreadType(scanner);
+                    chooseBreadType(scanner,breadMinerals);
+                    isBreadRunning = false;
                     break;
                 case "x":
                     System.out.println("Returning to Main Terminal");
@@ -42,7 +50,7 @@ public class Bread {
         }
     }
 
-    private void chooseBreadType(Scanner scanner) {
+    private void chooseBreadType(Scanner scanner, int breadMinerals) {
         boolean choosingType = true;
         while (choosingType) {
             System.out.println("""
@@ -59,22 +67,22 @@ public class Bread {
             switch (breadChoice) {
                 case "1":
                     System.out.println("You chose White Matter");
-                    new Meat().open(scanner);
+                    new Meat().open(scanner, breadMinerals);
                     choosingType=false;
                 break;
                 case "2":
                     System.out.println("You chose Comet Flakes");
-                    new Meat().open(scanner);
+                    new Meat().open(scanner, breadMinerals);
                     choosingType=false;
                 break;
                 case "3":
                     System.out.println("You chose Warp");
-                    new Meat().open(scanner);
+                    new Meat().open(scanner, breadMinerals);
                     choosingType=false;
                 break;
                 case "4":
                     System.out.println("You chose Cosmonaut Wheat");
-                    new Meat().open(scanner);
+                    new Meat().open(scanner, breadMinerals);
                     choosingType=false;
                 break;
                 case "x":
