@@ -39,7 +39,9 @@ public class Introduction {
 
                         switch (terminalChoice) {
                             case "1":
-                                System.out.println("FEATURE COMING SOON");
+                                Bread breadMenu = new Bread();
+                                breadMenu.open(scanner);
+                                break;
 
                             case "2":
                                 System.out.println("RESCUE TEAM NEVER RETURNED TO EARTH...");
