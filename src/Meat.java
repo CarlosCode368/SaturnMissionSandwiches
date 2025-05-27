@@ -61,6 +61,7 @@ public class Meat {
                     };
                     System.out.println("You chose " + selectedMeat);
 
+
                     System.out.println("Would you like EXTRA meat for an additional " + extraMeatCost + " minerals? (y/n)");
                     System.out.print("> ");
                     String extraChoice = scanner.nextLine().toLowerCase();
@@ -72,9 +73,9 @@ public class Meat {
                 } else {
                     System.out.println("You chose NO MEAT.");
                 }
+                new Cheese().open(scanner, breadMinerals);
                 isMeatRunning = false;
             }
         }
     }
 }
-
