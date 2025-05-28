@@ -46,7 +46,7 @@ public class CryoManager {
                 String nextChoice=scanner.nextLine().trim();
                 switch(nextChoice){
                     case "1" -> {
-                        new Checkout().open(scanner, breadMinerals);
+                        new Checkout().open(scanner);
                         return;
                     }
                     case "2" -> {

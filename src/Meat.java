@@ -1,11 +1,10 @@
 import java.util.Scanner;
 
 public class Meat {
-    public void open(Scanner scanner, int breadMinerals) {
+    public void open(Scanner scanner, Checkout checkout, int breadMinerals) {
         boolean isMeatRunning = true;
 
-        //Determine meat cost based on bread size
-
+        // Determine meat cost based on bread size
         int meatCost, extraMeatCost;
         switch (breadMinerals) {
             case 550 -> {
@@ -61,7 +60,6 @@ public class Meat {
                     };
                     System.out.println("You chose " + selectedMeat);
 
-
                     System.out.println("Would you like EXTRA meat for an additional " + extraMeatCost + " minerals? (y/n)");
                     System.out.print("> ");
                     String extraMeatChoice;
@@ -69,23 +67,31 @@ public class Meat {
                     while (true) {
                         extraMeatChoice = scanner.nextLine().toLowerCase();
 
-                    if (extraMeatChoice.equals("y") || extraMeatChoice.equals("n")) {
-                        break;
-                    } else {
-                        System.out.println("Invalid Command. Please enter 'Y' or 'N'");
-                        System.out.print("> ");
+                        if (extraMeatChoice.equals("y") || extraMeatChoice.equals("n")) {
+                            break;
+                        } else {
+                            System.out.println("Invalid Command. Please enter 'Y' or 'N'");
+                            System.out.print("> ");
+                        }
                     }
-                }
-                if(extraMeatChoice.equals("y")){
+
+                    int totalMeatCost = meatCost;
+                    if (extraMeatChoice.equals("y")) {
                         System.out.println("Extra meat added for " + extraMeatCost + " minerals.");
+                        totalMeatCost += extraMeatCost;
                     } else {
                         System.out.println("No extra meat added.");
                     }
+
+                    checkout.addItem(selectedMeat, 1, totalMeatCost);
+
                 } else {
                     System.out.println("You chose NO MEAT.");
                 }
-                new Cheese().open(scanner, breadMinerals);
+                new Cheese().open(scanner,breadMinerals);
                 isMeatRunning = false;
+            }else{
+                System.out.println("Invalid command. Please choose between 1-7 or 'x' to cancel.");
             }
         }
     }

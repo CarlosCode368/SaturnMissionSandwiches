@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 
 public class Bread {
-    public void open(Scanner scanner) {
+    public void open(Scanner scanner,Checkout checkout) {
         boolean isBreadRunning = true;
 
         while (isBreadRunning) {
@@ -24,19 +24,19 @@ public class Bread {
                 case "1":
                     breadMinerals=550;
                     System.out.println("You chose 4 inch bread");
-                    chooseBreadType(scanner,breadMinerals);  //user will be sent to the chooseBreadType boolean
+                    chooseBreadType(scanner,breadMinerals,checkout,"4 inch");  //user will be sent to the chooseBreadType boolean
                     isBreadRunning = false;
                     break;
                 case "2":
                     breadMinerals=700;
                     System.out.println("You chose 8 inch bread");
-                    chooseBreadType(scanner,breadMinerals);
+                    chooseBreadType(scanner,breadMinerals, checkout,"8 inch");
                     isBreadRunning = false;
                     break;
                 case "3":
                     breadMinerals=850;
                     System.out.println("You chose 12 inch bread");
-                    chooseBreadType(scanner,breadMinerals);
+                    chooseBreadType(scanner,breadMinerals,checkout,"12 inch");
                     isBreadRunning = false;
                     break;
                 case "x":
@@ -50,8 +50,9 @@ public class Bread {
         }
     }
 
-    private void chooseBreadType(Scanner scanner, int breadMinerals) {
+    private void chooseBreadType(Scanner scanner, int breadMinerals,Checkout checkout,String breadSize) {
         boolean choosingType = true;
+
         while (choosingType) {
             System.out.println("""
                     Choose your type of bread:
@@ -63,38 +64,31 @@ public class Bread {
                     """);
             System.out.print("> ");
             String breadChoice = scanner.nextLine().toLowerCase();
+            String breadName="";
 
             switch (breadChoice) {
-                case "1":
-                    System.out.println("You chose White Matter");
-                    new Meat().open(scanner, breadMinerals);
-                    choosingType=false;
-                break;
-                case "2":
-                    System.out.println("You chose Comet Flakes");
-                    new Meat().open(scanner, breadMinerals);
-                    choosingType=false;
-                break;
-                case "3":
-                    System.out.println("You chose Warp");
-                    new Meat().open(scanner, breadMinerals);
-                    choosingType=false;
-                break;
-                case "4":
-                    System.out.println("You chose Cosmonaut Wheat");
-                    new Meat().open(scanner, breadMinerals);
-                    choosingType=false;
-                break;
-                case "x":
+                case "1" -> breadName = "White Matter";
+                case "2" -> breadName = "Comet Flakes";
+                case "3" -> breadName = "Warp";
+                case "4" -> breadName = "Cosmonaut Wheat";
+                case "x" -> {
                     System.out.println("Order Cancelled, returning to Main Terminal");
-                    choosingType=false;
-                break;
-
-                default:
-                    System.out.println("Invalid choice. Please try again. ");
+                    choosingType = false;
+                    return;
+                }
+                default -> {
+                    System.out.println("Invalid choice. Please try again.");
+                    continue;
+                }
             }
+
+            System.out.println("You chose " + breadName);
+            checkout.addItem("Sandwich (" + breadName + " - " + breadSize + ")", 1, breadMinerals);
+            new Meat().open(scanner, checkout,breadMinerals);
+            choosingType = false;
         }
     }
-}
+            }
+
 
 
