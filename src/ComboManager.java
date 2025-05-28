@@ -21,19 +21,19 @@ public class ComboManager {
 
             if (drinkChoice.matches("[1-5]")) {
                 break;
-            }else{
+            } else {
                 System.out.println("Invalid command. Please enter a number between 1 and 5.");
             }
         }
-                String selectedDrink = switch (drinkChoice) {
-                    case "1" -> "Reactor Juice";
-                    case "2" -> "Centrifuged Soda";
-                    case "3" -> "Secret Formula Soda";
-                    case "4" -> "Alien Acid Soda";
-                    case "5" -> "H2O (Not water)";
-                    default -> "";
-                };
-                System.out.println("You chose " + selectedDrink);
+        String selectedDrink = switch (drinkChoice) {
+            case "1" -> "Reactor Juice";
+            case "2" -> "Centrifuged Soda";
+            case "3" -> "Secret Formula Soda";
+            case "4" -> "Alien Acid Soda";
+            case "5" -> "H2O (Not water)";
+            default -> "";
+        };
+        System.out.println("You chose " + selectedDrink);
         System.out.println("""
                 ***PLANET-MADE FRESH CHIPS! THE CORPORATE TOUCH***
                 Choose your chips:
@@ -50,7 +50,7 @@ public class ComboManager {
 
             if (chipsChoice.matches("[1-4]")) {
                 break;
-            }else{
+            } else {
                 System.out.println("Invalid command. Please enter a number between 1 and 4.");
             }
         }
@@ -63,12 +63,42 @@ public class ComboManager {
         };
         System.out.println("You chose " + selectedChips);
         System.out.println("""
-            Chips added. Combo complete!
-            1.Cryogenic preservation (FREE SERVICE)
-            2.Proceed to Checkout
-            3.Continue Ordering
-            """);
+                Chips added. Combo complete!
+                1.Cryogenic preservation (FREE SERVICE)
+                2.Proceed to Checkout
+                3.Continue Ordering
+                4.Cancel Order
+                """);
+
+        while (true) {
+            System.out.print("> ");
+            String finalChoice = scanner.nextLine().trim();
+
+
+            switch (finalChoice) {
+                case "1" -> {
+                    new CryoManager().open(scanner, breadMinerals);
+                    return;
+                }
+                case "2" -> {
+                    System.out.println("Proceeding to checkout...");
+                    new Checkout().open(scanner, breadMinerals);
+                    return;
+                }
+                case "3" -> {
+                    System.out.println("Sandwich saved in checkout...");
+                    new TerminalMenu().open(scanner, breadMinerals);
+                    return;
+                }
+                case "4" -> {
+                    System.out.println("Order Cancelled,Returning to Main Terminal");
+                    new TerminalMenu().open(scanner, breadMinerals);
+                    return;
+                }
             }
         }
+    }
+}
+
 
 
