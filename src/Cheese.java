@@ -28,17 +28,17 @@ public class Cheese {
 
         while (isCheeseRunning) {
             System.out.println("""
-                ***GALACTIC NEWS: NEXT EXPEDITION TO DISCOVER A CHEESE MOON
-                WILL BE LAUNCHING ON 2596***
-                Choose your cheese:
-                  1.Stored Cheese
-                  2.Artificial Cheese
-                  3.Milky Way Cheese
-                  4.European Cheese (Jupiter)
-                  5.NO CHEESE
-                  x.CANCEL ORDER
-               Any type of cheese will cost %d minerals.
-                                   """.formatted(cheeseCost));
+                     ***GALACTIC NEWS: NEXT EXPEDITION TO DISCOVER A CHEESE MOON
+                     WILL BE LAUNCHING ON 2596***
+                     Choose your cheese:
+                       1.Stored Cheese
+                       2.Artificial Cheese
+                       3.Milky Way Cheese
+                       4.European Cheese (Jupiter)
+                       5.NO CHEESE
+                       x.CANCEL ORDER
+                    Any type of cheese will cost %d minerals.
+                    """.formatted(cheeseCost));
             System.out.print("> ");
             String cheeseChoice = scanner.nextLine().toLowerCase();
 
@@ -48,29 +48,40 @@ public class Cheese {
             }
             if (cheeseChoice.matches("[1-5]")) {
                 if (!cheeseChoice.equals("5")) {
-                    String selectedMeat = switch (cheeseChoice) {
+                    String selectedCheese = switch (cheeseChoice) {
                         case "1" -> "Stored Cheese";
                         case "2" -> "Artificial Cheese";
                         case "3" -> "Milky Way Cheese";
                         case "4" -> "European Cheese (Jupiter)";
                         default -> "";
                     };
-                    System.out.println("You chose " + selectedMeat);
+                    System.out.println("You chose " + selectedCheese);
 
 
                     System.out.println("Would you like EXTRA cheese for an additional " + extraCheeseCost + " minerals? (y/n)");
                     System.out.print("> ");
-                    String extraChoice = scanner.nextLine().toLowerCase();
-                    if (extraChoice.equals("y")) {
-                        System.out.println("Extra cheese added for " + extraCheeseCost + " minerals.");
-                    } else {
-                        System.out.println("No extra cheese added.");
+                    String extraCheeseChoice;
+
+                    while (true) {
+                        extraCheeseChoice = scanner.nextLine().toLowerCase();
+                        if (extraCheeseChoice.equals("y") || extraCheeseChoice.equals("n")) {
+                            break;
+                        } else {
+                            System.out.println("Invalid Command. Please enter 'Y' or 'N'");
+                            System.out.print("> ");
+                        }
                     }
+                    if (extraCheeseChoice.equals("y")){
+                        System.out.println("Extra cheese added for " + extraCheeseCost + " minerals.");
                 } else {
-                    System.out.println("You chose NO CHEESE.");
+                    System.out.println("No extra cheese added.");
                 }
-                new Toppings().open(scanner, breadMinerals);
-                isCheeseRunning = false;
+            } else {
+                System.out.println("You chose NO CHEESE.");
+            }
+            new Toppings().open(scanner, breadMinerals);
+            isCheeseRunning = false;
+
             }else{
                 System.out.println("Invalid command.Please try again.");
             }

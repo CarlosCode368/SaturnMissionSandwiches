@@ -64,8 +64,19 @@ public class Meat {
 
                     System.out.println("Would you like EXTRA meat for an additional " + extraMeatCost + " minerals? (y/n)");
                     System.out.print("> ");
-                    String extraChoice = scanner.nextLine().toLowerCase();
-                    if (extraChoice.equals("y")) {
+                    String extraMeatChoice;
+
+                    while (true) {
+                        extraMeatChoice = scanner.nextLine().toLowerCase();
+
+                    if (extraMeatChoice.equals("y") || extraMeatChoice.equals("n")) {
+                        break;
+                    } else {
+                        System.out.println("Invalid Command. Please enter 'Y' or 'N'");
+                        System.out.print("> ");
+                    }
+                }
+                if(extraMeatChoice.equals("y")){
                         System.out.println("Extra meat added for " + extraMeatCost + " minerals.");
                     } else {
                         System.out.println("No extra meat added.");

@@ -9,7 +9,7 @@ public class Sauce {
         List<String> selectedSauces = new ArrayList<>();
 
         System.out.println("""
-                ***SAUCES THE FINAL FRONTIER OF DELICIOUSNESS***
+                ***SAUCES: THE FINAL FRONTIER OF DELICIOUSNESS***
                 Choose your Sauces:
                 
                 1. Void
@@ -87,13 +87,20 @@ public class Sauce {
                 default -> System.out.println("Invalid input. Please try again.");
             }
         }
-
+String toastChoice;
+        while(true){
         System.out.println("You selected the following sauces: " + selectedSauces);
-        System.out.println("Would you like to toast your sandwich? (y/n)");
+        System.out.println("Would you like to toast your sandwich? (Y/N)");
         System.out.print("> ");
-        String toastChoice = scanner.nextLine().trim().toLowerCase();
+        toastChoice = scanner.nextLine().trim().toLowerCase();
 
-        boolean isToasted = toastChoice.equals("y");
+            if (toastChoice.equals("y") || toastChoice.equals("n")) {
+                break;
+            }else {
+                System.out.println("Invalid Command. Please enter 'Y' or 'N'");
+            }
+            }
+        boolean isToasted=toastChoice.equals("y");
 
         if (isToasted) {
             System.out.println("Toasting...");
@@ -102,7 +109,7 @@ public class Sauce {
                     System.out.println(i + "...");
                     Thread.sleep(1000);
                 }
-            }catch(InterruptedException e){
+            } catch (InterruptedException e) {
                 System.out.println("FIRE HAZARD DETECTED! REVERTING TO NON-TOASTED MODE.");
                 Thread.currentThread().interrupt();
             }
@@ -110,5 +117,27 @@ public class Sauce {
         } else {
             System.out.println("...Is the sandwich moving?...");
         }
+        String comboChoice;
+
+        while (true) {
+            System.out.println("Would you like your sandwich in a combo? A SPACE COMBO!? (Y/N)");
+            System.out.print("> ");
+            comboChoice = scanner.nextLine().trim().toLowerCase();
+
+            if (comboChoice.equals("y") || comboChoice.equals("n")) {
+                break;
+            } else {
+                System.out.println("Invalid Command. Please enter 'Y' or 'N'");
+            }
+        }
+        boolean isComboed = comboChoice.equals("Y");
+        if (isComboed) {
+            new ComboManager().open(scanner, breadMinerals);
+
+        } else {
+            new CryoManager().open(scanner, breadMinerals);
+
+        }
+        isSauceRunning = false;
     }
 }
