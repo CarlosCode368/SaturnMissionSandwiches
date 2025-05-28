@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 public class Cheese {
-    public void open(Scanner scanner, int breadMinerals) {
-        int cheeseCost, extraCheeseCost;
+    public void open(Scanner scanner, Checkout checkout, int breadMinerals,
+                     int meatCost, int extraMeatCost, int cheeseCost, int extraCheeseCost) {
 
         // Set cheese costs based on bread size
         switch (breadMinerals) {
@@ -79,7 +79,8 @@ public class Cheese {
             } else {
                 System.out.println("You chose NO CHEESE.");
             }
-            new Toppings().open(scanner, breadMinerals);
+                new Toppings().open(scanner, checkout, breadMinerals,
+                        meatCost, extraMeatCost, cheeseCost, extraCheeseCost);
             isCheeseRunning = false;
 
             }else{

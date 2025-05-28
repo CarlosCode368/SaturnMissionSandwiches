@@ -40,7 +40,7 @@ public class Checkout {
             return;
         }
 
-        System.out.println("=== Checkout Summary ===");
+        System.out.println(" ****CHECKOUT CAPSULE****");
         int totalMinerals = 0;
         for (Item item : items) {
             int cost = item.totalCost();
@@ -48,7 +48,7 @@ public class Checkout {
             totalMinerals += cost;
         }
         System.out.println("-----------------------");
-        System.out.println("Total minerals required: " + totalMinerals);
+        System.out.println("Total minerals: " + totalMinerals);
 
         System.out.println("Press Enter to return to main menu...");
         scanner.nextLine();

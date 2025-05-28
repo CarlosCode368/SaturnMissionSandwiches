@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class CryoManager {
-    public void open(Scanner scanner,int breadMinerals){
+    public void open(Scanner scanner,Checkout checkout,int breadMinerals){
         System.out.println("""
                 ***Preserve your food for the long travel***
                  ***Freeze your food FREE OF CHARGE********
@@ -50,7 +50,7 @@ public class CryoManager {
                         return;
                     }
                     case "2" -> {
-                        new TerminalMenu().open(scanner, breadMinerals);
+                        new TerminalMenu().open(scanner,checkout, breadMinerals);
                         return;
                     }
                     default -> System.out.println("Invalid Command. Please enter 1 or 2");

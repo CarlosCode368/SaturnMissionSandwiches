@@ -2,8 +2,11 @@ import java.util.Scanner;
 
     public class Introduction {
         public static void main(String[] args) {
-            System.out.println("As you wander through the abandoned colony of Dione\nyou come across an automated food terminal...");
             Scanner scanner = new Scanner(System.in);
+            Checkout checkout = new Checkout();
+            int breadMinerals = 0;
+
+            System.out.println("As you wander through the abandoned colony of Dione\nyou come across an automated food terminal...");
             System.out.println("Press T to access terminal or X to abort mission");
             System.out.print("> ");
             String choice = scanner.nextLine().toUpperCase();  //SMALL INTRODUCTION FOR IMMERSION
@@ -24,8 +27,8 @@ import java.util.Scanner;
                             System.out.println("DETECTION INTERRUPTED");
                             return;
                         }
-                        new TerminalMenu().open(scanner,0);
-                                isRunning=false;
+                        new TerminalMenu().open(scanner, checkout, breadMinerals);
+                        isRunning = false;
                         break;
 
                     case "X":
@@ -36,9 +39,9 @@ import java.util.Scanner;
                     default:
                         System.out.println("INVALID COMMAND. Please press T to access terminal or X to abort.");
                         break;
-
+                }
                 }
                 scanner.close();
             }
         }
-    }
+

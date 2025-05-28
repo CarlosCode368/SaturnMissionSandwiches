@@ -1,7 +1,8 @@
 import java.util.Scanner;
 
 public class ComboManager {
-    public void open(Scanner scanner, int breadMinerals) {
+    public void open(Scanner scanner, Checkout checkout, int breadMinerals, int meatCost, int extraMeatCost, int cheeseCost, int extraCheeseCost) {
+
         System.out.println("-One small step for combos, one giant leap for deliciousness-\nCombo includes one small drink and chips for only 300 minerals (no cookie included)");
         System.out.println("""
                 Who said you cannot drink comfortably in space?
@@ -62,6 +63,11 @@ public class ComboManager {
             default -> "";
         };
         System.out.println("You chose " + selectedChips);
+        int totalComboCost = breadMinerals + meatCost + extraMeatCost + cheeseCost + extraCheeseCost + 300;
+        String comboName = "Combo: " + selectedDrink + " + " + selectedChips;
+        checkout.addItem(comboName, 1, totalComboCost);
+
+        System.out.println("Combo added to checkout for " + totalComboCost + " minerals.");
         System.out.println("""
                 Chips added. Combo complete!
                 1.Cryogenic preservation (FREE SERVICE)
@@ -77,22 +83,22 @@ public class ComboManager {
 
             switch (finalChoice) {
                 case "1" -> {
-                    new CryoManager().open(scanner, breadMinerals);
+                    new CryoManager().open(scanner,checkout, breadMinerals);
                     return;
                 }
                 case "2" -> {
                     System.out.println("Proceeding to checkout...");
-                    new Checkout().open(scanner, breadMinerals);
+                    checkout.open(scanner,breadMinerals);
                     return;
                 }
                 case "3" -> {
                     System.out.println("Sandwich saved in checkout...");
-                    new TerminalMenu().open(scanner, breadMinerals);
+                    new TerminalMenu().open(scanner, checkout, breadMinerals);
                     return;
                 }
                 case "4" -> {
                     System.out.println("Order Cancelled,Returning to Main Terminal");
-                    new TerminalMenu().open(scanner, breadMinerals);
+                    new TerminalMenu().open(scanner, checkout, breadMinerals);
                     return;
                 }
             }

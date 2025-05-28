@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Sauce {
 
-    public void open(Scanner scanner, int breadMinerals) {
+    public void open(Scanner scanner, Checkout checkout, int breadMinerals, int meatCost, int extraMeatCost, int cheeseCost, int extraCheeseCost) {
         boolean isSauceRunning = true;
         List<String> selectedSauces = new ArrayList<>();
 
@@ -133,10 +133,10 @@ public class Sauce {
         boolean isComboed = comboChoice.equals("y");
 
         if (isComboed) {
-            new ComboManager().open(scanner, breadMinerals);
+            new ComboManager().open(scanner,checkout,breadMinerals, meatCost, extraMeatCost, cheeseCost, extraCheeseCost);
 
         } else {
-            new CryoManager().open(scanner, breadMinerals);
+            new CryoManager().open(scanner, checkout,breadMinerals);
 
         }
     }

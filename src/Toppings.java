@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 public class Toppings {
 
-    public void open(Scanner scanner, int breadMinerals) {
+    public void open(Scanner scanner, Checkout checkout, int breadMinerals,
+                     int meatCost, int extraMeatCost, int cheeseCost, int extraCheeseCost) {
         boolean isToppingsRunning = true;
         List<String> selectedToppings = new ArrayList<>();
 
@@ -89,7 +90,7 @@ public class Toppings {
                                         }
                                             case "8" -> {
                                                 if (selectedToppings.contains("Mushroom Guys")) {
-                                                    System.out.println("You already Mushroom Guys");
+                                                    System.out.println("You already added Mushroom Guys");
                                                 } else {
                                                     System.out.println("Added Parasitic Spore");
                                                     selectedToppings.add("Mushroom Guys");
@@ -98,7 +99,7 @@ public class Toppings {
                                             case "c" -> {
                                                 System.out.println("Toppings selection complete!");
                                                 isToppingsRunning = false;
-                                                new Sauce().open(scanner, breadMinerals);
+                                                new Sauce().open(scanner, checkout, breadMinerals, meatCost, extraMeatCost, cheeseCost, extraCheeseCost);
                                             }
                                             case "x" -> {
                                                 System.out.println("Order cancelled. Returning to Main Terminal.");

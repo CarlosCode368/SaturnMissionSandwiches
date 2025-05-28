@@ -88,7 +88,7 @@ public class Meat {
                 } else {
                     System.out.println("You chose NO MEAT.");
                 }
-                new Cheese().open(scanner,breadMinerals);
+                new Cheese().open(scanner, checkout, breadMinerals,meatCost,extraMeatCost,0,0);
                 isMeatRunning = false;
             }else{
                 System.out.println("Invalid command. Please choose between 1-7 or 'x' to cancel.");
