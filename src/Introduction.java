@@ -27,7 +27,7 @@ import java.util.Scanner;
                             System.out.println("DETECTION INTERRUPTED");
                             return;
                         }
-                        new TerminalMenu().open(scanner, checkout, breadMinerals);
+                        new TerminalMenu().open(scanner, checkout);
                         isRunning = false;
                         break;
 

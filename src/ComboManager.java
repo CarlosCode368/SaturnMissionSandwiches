@@ -3,11 +3,11 @@ import java.util.Scanner;
 public class ComboManager {
     public void open(Scanner scanner, Checkout checkout, int breadMinerals, int meatCost, int extraMeatCost, int cheeseCost, int extraCheeseCost) {
 
-        System.out.println("-One small step for combos, one giant leap for deliciousness-\nCombo includes one small drink and chips for only 300 minerals (no cookie included)");
+        System.out.println("-One small step for combos, one giant leap for deliciousness-\nCombo includes one Atom Drink and chips for only 300 minerals (no cookie included)");
         System.out.println("""
                 Who said you cannot drink comfortably in space?
                 Quench your thirst with the help of our awesome vacuum proofed thermos!
-                Choose your small drink:
+                Choose your Atom Drink:
                 1.Reactor Juice
                 2.Centrifuged Soda
                 3.Secret Formula Soda
@@ -83,7 +83,7 @@ public class ComboManager {
 
             switch (finalChoice) {
                 case "1" -> {
-                    new CryoManager().open(scanner,checkout, breadMinerals);
+                    new CryoManager().open(scanner,checkout);
                     return;
                 }
                 case "2" -> {
@@ -93,12 +93,12 @@ public class ComboManager {
                 }
                 case "3" -> {
                     System.out.println("Sandwich saved in checkout...");
-                    new TerminalMenu().open(scanner, checkout, breadMinerals);
+                    new TerminalMenu().open(scanner, checkout);
                     return;
                 }
                 case "4" -> {
                     System.out.println("Order Cancelled,Returning to Main Terminal");
-                    new TerminalMenu().open(scanner, checkout, breadMinerals);
+                    new TerminalMenu().open(scanner, checkout);
                     return;
                 }
             }

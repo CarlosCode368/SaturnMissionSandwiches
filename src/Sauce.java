@@ -136,7 +136,7 @@ public class Sauce {
             new ComboManager().open(scanner,checkout,breadMinerals, meatCost, extraMeatCost, cheeseCost, extraCheeseCost);
 
         } else {
-            new CryoManager().open(scanner, checkout,breadMinerals);
+            new CryoManager().open(scanner, checkout);
 
         }
     }

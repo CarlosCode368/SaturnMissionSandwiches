@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class TerminalMenu {
-    public void open(Scanner scanner, Checkout checkout, int breadMinerals) {
+    public void open(Scanner scanner, Checkout checkout) {
 
         boolean inTerminal = true;
         while (inTerminal) {
