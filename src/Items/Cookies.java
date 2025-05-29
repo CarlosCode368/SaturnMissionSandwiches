@@ -1,3 +1,7 @@
+package Items;
+
+import Menus.Checkout;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
@@ -43,7 +47,7 @@ public class Cookies {
 
                     int totalCost = quantity * cookiePrice;
                     System.out.println("You acquired " + quantity + " " + selectedCookies + "(s) for " + totalCost + " minerals!");
-                    System.out.println("Items moved to your Checkout.");
+                    System.out.println("Items moved to your Menus.Checkout.");
 
                     checkout.addItem(selectedCookies, quantity, cookiePrice);
                 }

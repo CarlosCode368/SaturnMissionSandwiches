@@ -1,7 +1,11 @@
+package Items;
+
+import Menus.Checkout;
+
 import java.util.Scanner;
 
 public class Meat {
-    public void open(Scanner scanner, Checkout checkout, int breadMinerals) {
+    public void open(Scanner scanner, Checkout checkout, String sandwichName, int breadMinerals) {
         boolean isMeatRunning = true;
 
         // Determine meat cost based on bread size
@@ -47,6 +51,8 @@ public class Meat {
                 System.out.println("Order Cancelled, returning to Main Terminal");
                 break;
             }
+                String meatType="No Items.Items.Meat";
+
             if (meatChoice.matches("[1-7]")) {
                 if (!meatChoice.equals("7")) {
                     String selectedMeat = switch (meatChoice) {
@@ -65,6 +71,7 @@ public class Meat {
                     String extraMeatChoice;
 
                     while (true) {
+                        System.out.println("You selected the following sauces: " + selectedMeat);
                         extraMeatChoice = scanner.nextLine().toLowerCase();
 
                         if (extraMeatChoice.equals("y") || extraMeatChoice.equals("n")) {
@@ -83,12 +90,10 @@ public class Meat {
                         System.out.println("No extra meat added.");
                     }
 
-                    checkout.addItem(selectedMeat, 1, totalMeatCost);
-
                 } else {
                     System.out.println("You chose NO MEAT.");
                 }
-                new Cheese().open(scanner, checkout, breadMinerals,meatCost,extraMeatCost,0,0);
+                new Cheese().open(scanner, checkout, sandwichName, meatType, breadMinerals, meatCost, extraMeatCost, 0, 0);
                 isMeatRunning = false;
             }else{
                 System.out.println("Invalid command. Please choose between 1-7 or 'x' to cancel.");

@@ -1,3 +1,5 @@
+package Menus;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -24,6 +26,12 @@ public class Checkout {
 
     // ADD ITEM
     public void addItem(String itemName, int quantity, int costPerItem) {
+        for (Item item : items) {
+            if (item.name.equals(itemName) && item.costPerItem == costPerItem) {
+                item.quantity += quantity;
+                return;
+            }
+        }
         items.add(new Item(itemName, quantity, costPerItem));
     }
 

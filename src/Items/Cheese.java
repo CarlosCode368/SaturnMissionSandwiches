@@ -1,8 +1,12 @@
+package Items;
+
+import Menus.Checkout;
+
 import java.util.Scanner;
 
-public class Cheese {
-    public void open(Scanner scanner, Checkout checkout, int breadMinerals,
-                     int meatCost, int extraMeatCost, int cheeseCost, int extraCheeseCost) {
+public class Cheese{
+    public void open(Scanner scanner, Checkout checkout, String breadName, String meatName,
+                     int breadMinerals, int meatCost, int extraMeatCost, int cheeseCost, int extraCheeseCost){
 
         // Set cheese costs based on bread size
         switch (breadMinerals) {
@@ -31,10 +35,10 @@ public class Cheese {
                      ***GALACTIC NEWS: NEXT EXPEDITION TO DISCOVER A CHEESE MOON
                      WILL BE LAUNCHING ON 2596***
                      Choose your cheese:
-                       1.Stored Cheese
-                       2.Artificial Cheese
-                       3.Milky Way Cheese
-                       4.European Cheese (Jupiter)
+                       1.Stored Items.Items.Cheese
+                       2.Artificial Items.Items.Cheese
+                       3.Milky Way Items.Items.Cheese
+                       4.European Items.Items.Cheese (Jupiter)
                        5.NO CHEESE
                        x.CANCEL ORDER
                     Any type of cheese will cost %d minerals.
@@ -49,10 +53,10 @@ public class Cheese {
             if (cheeseChoice.matches("[1-5]")) {
                 if (!cheeseChoice.equals("5")) {
                     String selectedCheese = switch (cheeseChoice) {
-                        case "1" -> "Stored Cheese";
-                        case "2" -> "Artificial Cheese";
-                        case "3" -> "Milky Way Cheese";
-                        case "4" -> "European Cheese (Jupiter)";
+                        case "1" -> "Stored Items.Items.Cheese";
+                        case "2" -> "Artificial Items.Items.Cheese";
+                        case "3" -> "Milky Way Items.Items.Cheese";
+                        case "4" -> "European Items.Items.Cheese (Jupiter)";
                         default -> "";
                     };
                     System.out.println("You chose " + selectedCheese);
@@ -79,8 +83,13 @@ public class Cheese {
             } else {
                 System.out.println("You chose NO CHEESE.");
             }
-                new Toppings().open(scanner, checkout, breadMinerals,
-                        meatCost, extraMeatCost, cheeseCost, extraCheeseCost);
+                StringBuilder sandwichDetails = new StringBuilder(" (" + breadName + " - " + meatName);
+                if (extraMeatCost > 0) sandwichDetails.append(", Extra Items.Items.Meat");
+                if (cheeseCost > 0) sandwichDetails.append(", Items.Items.Cheese");
+                if (extraCheeseCost > 0) sandwichDetails.append(", Extra Items.Items.Cheese");
+                sandwichDetails.append(")");
+
+                new Toppings().open(scanner, checkout, breadName, meatName, breadMinerals, meatCost, extraMeatCost, cheeseCost, extraCheeseCost);
             isCheeseRunning = false;
 
             }else{

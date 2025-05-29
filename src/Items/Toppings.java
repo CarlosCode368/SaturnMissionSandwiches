@@ -1,11 +1,13 @@
+package Items;
+
+import Menus.Checkout;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Toppings {
-
-    public void open(Scanner scanner, Checkout checkout, int breadMinerals,
-                     int meatCost, int extraMeatCost, int cheeseCost, int extraCheeseCost) {
+public class Toppings{
+    public void open(Scanner scanner, Checkout checkout, String sandwichName, String meatName,
+                     int breadMinerals, int meatCost, int extraMeatCost, int cheeseCost, int extraCheeseCost){
         boolean isToppingsRunning = true;
         List<String> selectedToppings = new ArrayList<>();
 
@@ -24,7 +26,7 @@ public class Toppings {
                 8. Mushroom Guys (WARNING: SLIGHT PROBABILITY OF BRAIN PARASITES IF CONSUMED)
                 C. Complete toppings
                 x. Cancel Order
-                (Toppings are FREE with your sandwich!)
+                (Items.Items.Toppings are FREE with your sandwich!)
                 """);
 
         while (isToppingsRunning) {
@@ -97,9 +99,9 @@ public class Toppings {
                                                 }
                                             }
                                             case "c" -> {
-                                                System.out.println("Toppings selection complete!");
+                                                System.out.println("Items.Items.Toppings selection complete!");
                                                 isToppingsRunning = false;
-                                                new Sauce().open(scanner, checkout, breadMinerals, meatCost, extraMeatCost, cheeseCost, extraCheeseCost);
+                                                (new Sauce()).open(scanner, checkout, sandwichName, meatName, breadMinerals, meatCost, extraMeatCost, cheeseCost, extraCheeseCost);
                                             }
                                             case "x" -> {
                                                 System.out.println("Order cancelled. Returning to Main Terminal.");

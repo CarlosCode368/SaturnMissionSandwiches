@@ -1,7 +1,12 @@
+package Managers;
+
+import Menus.Checkout;
+import Menus.TerminalMenu;
+
 import java.util.Scanner;
 
 public class ComboManager {
-    public void open(Scanner scanner, Checkout checkout, int breadMinerals, int meatCost, int extraMeatCost, int cheeseCost, int extraCheeseCost) {
+    public void open(Scanner scanner, Checkout checkout, String breadName, String meatName, int breadMinerals, int meatCost, int extraMeatCost, int cheeseCost, int extraCheeseCost) {
 
         System.out.println("-One small step for combos, one giant leap for deliciousness-\nCombo includes one Atom Drink and chips for only 300 minerals (no cookie included)");
         System.out.println("""
@@ -38,7 +43,7 @@ public class ComboManager {
         System.out.println("""
                 ***PLANET-MADE FRESH CHIPS! THE CORPORATE TOUCH***
                 Choose your chips:
-                1.Rocket Chips
+                1.Rocket Items.Items.Chips
                 2.Volcanic Breathe
                 3.Mothership Debris
                 4.Crunchy Crystals
@@ -56,20 +61,23 @@ public class ComboManager {
             }
         }
         String selectedChips = switch (chipsChoice) {
-            case "1" -> "Rocket Chips";
+            case "1" -> "Rocket Items.Items.Chips";
             case "2" -> "Volcanic Breathe";
             case "3" -> "Mothership Debris";
             case "4" -> "Crunchy Crystals";
             default -> "";
         };
         System.out.println("You chose " + selectedChips);
-        int totalComboCost = breadMinerals + meatCost + extraMeatCost + cheeseCost + extraCheeseCost + 300;
+        int totalSandwichCost = breadMinerals + meatCost + extraMeatCost + cheeseCost + extraCheeseCost;
+        int totalComboCost = totalSandwichCost + 300;
+
         String comboName = "Combo: " + selectedDrink + " + " + selectedChips;
+
         checkout.addItem(comboName, 1, totalComboCost);
 
         System.out.println("Combo added to checkout for " + totalComboCost + " minerals.");
         System.out.println("""
-                Chips added. Combo complete!
+                Items.Items.Chips added. Combo complete!
                 1.Cryogenic preservation (FREE SERVICE)
                 2.Proceed to Checkout
                 3.Continue Ordering
@@ -83,7 +91,7 @@ public class ComboManager {
 
             switch (finalChoice) {
                 case "1" -> {
-                    new CryoManager().open(scanner,checkout);
+                    new CryoManager().open(scanner,checkout,breadMinerals);
                     return;
                 }
                 case "2" -> {

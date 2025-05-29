@@ -1,8 +1,13 @@
+package Items;
+
+import Items.Meat;
+import Menus.Checkout;
+
 import java.util.Scanner;
 
 
 public class Bread {
-    public void open(Scanner scanner,Checkout checkout) {
+    public void open(Scanner scanner, Checkout checkout) {
         boolean isBreadRunning = true;
 
         while (isBreadRunning) {
@@ -54,6 +59,41 @@ public class Bread {
         boolean choosingType = true;
 
         while (choosingType) {
+            System.out.println("""
+                    Choose your type of bread:
+                    1. White Matter
+                    2. Comet Flakes
+                    3. Warp
+                    4. Cosmonaut Wheat
+                    x. Return to Main Terminal
+                    """);
+            System.out.print("> ");
+            String breadChoice = scanner.nextLine().toLowerCase();
+            String breadName="";
+
+            switch (breadChoice) {
+                case "1" -> breadName = "White Matter";
+                case "2" -> breadName = "Comet Flakes";
+                case "3" -> breadName = "Warp";
+                case "4" -> breadName = "Cosmonaut Wheat";
+                case "x" -> {
+                    System.out.println("Order Cancelled, returning to Main Terminal");
+                    choosingType = false;
+                    return;
+                }
+                default -> {
+                    System.out.println("Invalid choice. Please try again.");
+                    continue;
+                }
+            }
+
+            System.out.println("You chose " + breadName);
+
+            String sandwichName = breadName + " - " + breadSize;
+            checkout.addItem("Sandwich (" + sandwichName + ")", 1, breadMinerals);
+            new Meat().open(scanner, checkout, sandwichName, breadMinerals);
+
+            choosingType = false;
         }
     }
             }

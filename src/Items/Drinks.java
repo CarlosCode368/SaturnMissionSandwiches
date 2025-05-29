@@ -1,3 +1,8 @@
+package Items;
+
+import Menus.Checkout;
+import Menus.TerminalMenu;
+
 import java.util.Scanner;
 
 
@@ -84,7 +89,7 @@ public class Drinks {
                     return;
                 }
                 case "c" -> {
-                    System.out.println("Getting your Checkout capsule...");
+                    System.out.println("Getting your Menus.Checkout capsule...");
                     checkout.open(scanner);
                     return;
                 }

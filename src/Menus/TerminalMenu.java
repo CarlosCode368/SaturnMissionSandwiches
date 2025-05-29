@@ -1,3 +1,9 @@
+package Menus;
+
+import Items.Bread;
+import Items.Cookies;
+import Items.Drinks;
+
 import java.util.Scanner;
 
 public class TerminalMenu {
@@ -10,7 +16,7 @@ public class TerminalMenu {
                                        est.2525
                      ********************************************
                      1. Get a Sandwich
-                     2. Get Chips
+                     2. Get Items.Chips
                      3. Get Cookies
                      4. Get Drinks
                      x. Leave terminal           
@@ -24,7 +30,7 @@ public class TerminalMenu {
                     break;
                 case"2":
 
-                    new Chips().open(scanner, checkout);
+                    new Items.Chips().open(scanner, checkout);
                     break;
                 case"3":
 

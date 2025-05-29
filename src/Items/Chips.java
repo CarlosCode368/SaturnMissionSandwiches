@@ -1,7 +1,13 @@
-import java.util.*;
+package Items;
+import Menus.Checkout;
 
-public class Chips {
-    private final List<String> chips = Arrays.asList("Rocket Chips", "Volcanic Breathe", "Mothership Debris", "Crunchy Crystals");
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+
+
+public class Chips{
+    private final List<String> chips = Arrays.asList("Rocket Items.Items.Chips", "Volcanic Breathe", "Mothership Debris", "Crunchy Crystals");
     private final int chipPrice = 150;
 
     public void open(Scanner scanner, Checkout checkout) {
@@ -12,7 +18,7 @@ public class Chips {
                     ***PLANET-MADE FRESH CHIPS! THE CORPORATE TOUCH***
                     Choose your chips:
                     (150 minerals per bag of chips)
-                    1. Rocket Chips
+                    1. Rocket Items.Items.Chips
                     2. Volcanic Breathe
                     3. Mothership Debris
                     4. Crunchy Crystals
@@ -41,7 +47,7 @@ public class Chips {
 
                     int totalCost = quantity * chipPrice;
                     System.out.println("You acquired " + quantity + " " + selectedChip + "(s) for " + totalCost + " minerals!");
-                    System.out.println("Items moved to your Checkout.");
+                    System.out.println("Items moved to your Menus.Checkout.");
 
                     checkout.addItem(selectedChip, quantity, chipPrice);
                 }

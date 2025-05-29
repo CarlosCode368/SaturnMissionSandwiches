@@ -1,7 +1,12 @@
+package Managers;
+
+import Menus.Checkout;
+import Menus.TerminalMenu;
+
 import java.util.Scanner;
 
 public class CryoManager {
-    public void open(Scanner scanner,Checkout checkout){
+    public void open(Scanner scanner,Checkout checkout, int breadMinerals){
         System.out.println("""
                 ***Preserve your food for the long travel***
                  ***Freeze your food FREE OF CHARGE********
@@ -46,7 +51,7 @@ public class CryoManager {
                 String nextChoice=scanner.nextLine().trim();
                 switch(nextChoice){
                     case "1" -> {
-                        new Checkout().open(scanner);
+                        new Checkout().open(scanner,breadMinerals);
                         return;
                     }
                     case "2" -> {
