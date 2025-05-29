@@ -20,9 +20,9 @@ public class Sauce{
                 1. Void
                 2. Space Ranch
                 3. Thousand Moons
-                4. Engineered Items.Items.Sauce
+                4. Engineered Sauce
                 5. Tardigrade
-                6. MRE Items.Items.Sauce
+                6. MRE Sauce
                 C. Complete Sandwich
                 x. Cancel Order
                 (Sauces are FREE with your sandwich!)
@@ -35,15 +35,15 @@ public class Sauce{
             switch (choice) {
                 case "1" -> {
                     if (selectedSauces.contains("Void")) {
-                        System.out.println("You already added Void Items.Items.Sauce!");
+                        System.out.println("You already added Void Sauce!");
                     } else {
-                        System.out.println("Added Void Items.Items.Sauce");
+                        System.out.println("Added Void Sauce");
                         selectedSauces.add("Void");
                     }
                 }
                 case "2" -> {
                     if (selectedSauces.contains("Space Ranch")) {
-                        System.out.println("You already added Space Ranch Items.Items.Sauce!");
+                        System.out.println("You already added Space Ranch Sauce!");
                     } else {
                         System.out.println("Added Space Ranch");
                         selectedSauces.add("Space Ranch");
@@ -51,38 +51,38 @@ public class Sauce{
                 }
                 case "3" -> {
                     if (selectedSauces.contains("Thousand Moons")) {
-                        System.out.println("You already added Thousand Moons Items.Items.Sauce!");
+                        System.out.println("You already added Thousand Moons Sauce!");
                     } else {
-                        System.out.println("Added Thousand Moons Items.Items.Sauce");
+                        System.out.println("Added Thousand Moons Sauce");
                         selectedSauces.add("Thousand Moons");
                     }
                 }
                 case "4" -> {
-                    if (selectedSauces.contains("Engineered Items.Items.Sauce")) {
-                        System.out.println("You already added Engineered Items.Items.Sauce!");
+                    if (selectedSauces.contains("Engineered Sauce")) {
+                        System.out.println("You already added Engineered Sauce!");
                     } else {
-                        System.out.println("Added Engineered Items.Items.Sauce");
-                        selectedSauces.add("Engineered Items.Items.Sauce");
+                        System.out.println("Added Engineered Sauce");
+                        selectedSauces.add("Engineered Sauce");
                     }
                 }
                 case "5" -> {
                     if (selectedSauces.contains("Tardigrade")) {
-                        System.out.println("You already added Tardigrade Items.Items.Sauce!");
+                        System.out.println("You already added Tardigrade Sauce!");
                     } else {
-                        System.out.println("Added Tardigrade Items.Items.Sauce ");
+                        System.out.println("Added Tardigrade Sauce ");
                         selectedSauces.add("Tardigrade");
                     }
                 }
                 case "6" -> {
-                    if (selectedSauces.contains("MRE Items.Items.Sauce")) {
-                        System.out.println("You already added MRE Items.Items.Sauce!");
+                    if (selectedSauces.contains("MRE Sauce")) {
+                        System.out.println("You already added MRE Sauce!");
                     } else {
-                        System.out.println("Added MRE Items.Items.Sauce");
-                        selectedSauces.add("MRE Items.Items.Sauce");
+                        System.out.println("Added MRE Sauce");
+                        selectedSauces.add("MRE Sauce");
                     }
                 }
                 case "c" -> {
-                    System.out.println("Items.Items.Sauce selection complete!");
+                    System.out.println("Sauce selection complete!");
                     isSauceRunning = false;
                 }
                 case "x" -> {

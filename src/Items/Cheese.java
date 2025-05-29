@@ -35,10 +35,10 @@ public class Cheese{
                      ***GALACTIC NEWS: NEXT EXPEDITION TO DISCOVER A CHEESE MOON
                      WILL BE LAUNCHING ON 2596***
                      Choose your cheese:
-                       1.Stored Items.Items.Cheese
-                       2.Artificial Items.Items.Cheese
-                       3.Milky Way Items.Items.Cheese
-                       4.European Items.Items.Cheese (Jupiter)
+                       1.Stored Cheese
+                       2.Artificial Cheese
+                       3.Milky Way Cheese
+                       4.European Cheese (Jupiter)
                        5.NO CHEESE
                        x.CANCEL ORDER
                     Any type of cheese will cost %d minerals.
