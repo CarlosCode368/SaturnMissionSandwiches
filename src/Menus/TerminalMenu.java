@@ -16,7 +16,7 @@ public class TerminalMenu {
                                        est.2525
                      ********************************************
                      1. Get a Sandwich
-                     2. Get Items.Chips
+                     2. Get Chips
                      3. Get Cookies
                      4. Get Drinks
                      x. Leave terminal           

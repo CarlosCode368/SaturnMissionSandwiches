@@ -9,7 +9,7 @@ public class Introduction {
         Checkout checkout = new Checkout();
         int breadMinerals = 0;
 
-        System.out.println("As you wander through the abandoned colony of Dione\nyou come across an automated food terminal...");
+        System.out.println("As you wander through tthe abandoned colony of Dione\nyou come across an automated food terminal...");
         System.out.println("Press T to access terminal or X to abort mission");
         System.out.print("> ");
         String choice = scanner.nextLine().toUpperCase();  //SMALL INTRODUCTION FOR IMMERSION

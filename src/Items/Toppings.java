@@ -99,7 +99,7 @@ public class Toppings{
                                                 }
                                             }
                                             case "c" -> {
-                                                System.out.println("Items.Items.Toppings selection complete!");
+                                                System.out.println("Toppings selection complete!");
                                                 isToppingsRunning = false;
                                                 (new Sauce()).open(scanner, checkout, sandwichName, meatName, breadMinerals, meatCost, extraMeatCost, cheeseCost, extraCheeseCost);
                                             }
