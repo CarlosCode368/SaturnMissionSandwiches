@@ -18,12 +18,12 @@ After the checkout you should be able to get the receipts, that will help us gat
 User will be able to exit the application without blowing up the entire colony
 
 ## Screenshots
-![Ledger](Images/SaturnMissionSandwichessmsdiagram.jpg)
-![Import the .csv file](Images/smsIntro.jpg)
-![Greet the User](Images/smsterminalMenu.jpg)
-![Ledger](Images/smscombomanager.jpg)
-![Ledger](Images/smscheckout.jpg)
-![Ledger](Images/smstxtfiles.jpg)
+![Diagram](ImagesSaturn/SaturnMissionSandwichessmsdiagram.jpg)
+![Intro](ImagesSaturn/smsIntro.jpg)
+![Terminal](ImagesSaturn/smsterminalMenu.jpg)
+![Combo](ImagesSaturn/smscombomanager.jpg)
+![Checkout](ImagesSaturn/smscheckout.jpg)
+![txt](ImagesSaturn/smstxtfiles.jpg)
 
 
 
