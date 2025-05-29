@@ -1,11 +1,12 @@
 #My Project
 
-Greeting, Rescue Team
-We lost signal with Dione colony base two weeks ago. Your mission is to gather intel and rescue any survivors if any. 
-It might be tivial, but a food joint created in Jupiter had recently opened in Dione. It's called Saturn Mission Sandwiches. 
-Maybe is worth checking it out? 
+Greeting, Rescue Team.
+We lost signal with the Dione colony base two weeks ago. Your mission is to gather intel and rescue any survivors—if any remain.
 
-The previous expedition was able to gather some data from the store interface. It's a little bit suspisious
+It might sound trivial, but a food joint from Jupiter recently opened a location on Dione. It's called Saturn Mission Sandwiches.
+Could be worth checking out…?
+
+The previous expedition managed to extract partial data from the store's interface. It's... suspicious.
 
 #Program Features
 **Add Sandwich and make it Combo** 
@@ -18,12 +19,12 @@ After the checkout you should be able to get the receipts, that will help us gat
 User will be able to exit the application without blowing up the entire colony
 
 ## Screenshots
-![Ledger](Images/SaturnMissionSandwichessmsdiagram.jpg)
-![Import the .csv file](Images/smsIntro.jpg)
-![Greet the User](Images/smsterminalMenu.jpg)
-![Ledger](Images/smscombomanager.jpg)
-![Ledger](Images/smscheckout.jpg)
-![Ledger](Images/smstxtfiles.jpg)
+![Diagram](ImagesSaturn/SaturnMissionSandwichessmsdiagram.jpg)
+![Intro](ImagesSaturn/smsIntro.jpg)
+![Terminal](ImagesSaturn/smsterminalMenu.jpg)
+![Combo](ImagesSaturn/smscombomanager.jpg)
+![Checkout](ImagesSaturn/smscheckout.jpg)
+![txt](ImagesSaturn/smstxtfiles.jpg)
 
 
 
