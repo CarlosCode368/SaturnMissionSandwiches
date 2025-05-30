@@ -81,7 +81,7 @@ public class Checkout {
                 String dateTime = now.format(DateTimeFormatter.ofPattern("MMdd-HHmmss"));
                 String fileName = "2594" + dateTime + ".txt";
 
-                File directory = new File("Receipts");
+                File directory = new File("src/Menus/Receipts");
                 if (!directory.exists()) {
                     directory.mkdir();
                 }
